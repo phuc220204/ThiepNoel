@@ -384,7 +384,7 @@ function updateImageGeometry(texture, mesh) {
   if (!texture || !texture.image) return;
   const aspectRatio = texture.image.width / texture.image.height;
   const isMobileDevice = window.isMobile || window.innerWidth <= 768;
-  const baseSize = isMobileDevice ? 10 : 15; // Giảm kích thước trên mobile để đỡ tràn viền
+  const baseSize = isMobileDevice ? 15 : 22; // Tăng kích thước ảnh to hơn để nhìn "đã" hơn
   let width, height;
 
   if (aspectRatio > 1) {
@@ -406,8 +406,8 @@ function makeImageMesh(imagePath) {
   const cached = textureCache[imagePath];
 
   const geometry = new THREE.PlaneGeometry(
-    isMobileDevice ? 9 : 12,
-    isMobileDevice ? 9 : 12
+    isMobileDevice ? 15 : 20,
+    isMobileDevice ? 15 : 20
   );
   const material = new THREE.MeshBasicMaterial({
     map: cached || null,
